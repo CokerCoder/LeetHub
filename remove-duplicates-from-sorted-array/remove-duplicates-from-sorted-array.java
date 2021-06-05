@@ -1,23 +1,14 @@
 import java.util.ArrayList;
 
 class Solution {
-    public static int removeDuplicates(int[] nums) {
-        // arraylist to store the presented number
-        List<Integer> num_list = new ArrayList<Integer>();
-        int i;
-        for (i = 0; i < nums.length; i++) {
-            // if present
-            if (num_list.contains(nums[i])) {
-                if (nums[i] == nums[nums.length - 1])
-                    return i;
-                // shift one place right from current position
-                for (int j = i; j < nums.length - 1; j++) {
-                    nums[j] = nums[j + 1];
-                }
-                i -= 1;
-            } else
-                num_list.add(nums[i]);
+    public int removeDuplicates(int[] nums) {
+        if (nums.length == 0) return 0;
+        int i = 0;
+        for (int j = 1; j < nums.length; j++) {
+            if (nums[j] != nums[i]) {
+                nums[++i] = nums[j];
+            }
         }
-        return i;
+        return i + 1;
     }
 }
