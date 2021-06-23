@@ -5,8 +5,8 @@
   <br/>
   <br/>
   
-  [![Solved](https://img.shields.io/badge/Solved-29/1905-337ab7.svg?style=flat)](https://github.com/yunfeijing/LeetHub)
-  [![Easy](https://img.shields.io/badge/Easy-16-5cb85c.svg?style=flat)](https://github.com/yunfeijing/LeetHub)
+  [![Solved](https://img.shields.io/badge/Solved-32/1905-337ab7.svg?style=flat)](https://github.com/yunfeijing/LeetHub)
+  [![Easy](https://img.shields.io/badge/Easy-19-5cb85c.svg?style=flat)](https://github.com/yunfeijing/LeetHub)
   [![Medium](https://img.shields.io/badge/Medium-12-f0ad4e.svg?style=flat)](https://github.com/yunfeijing/LeetHub)
   [![Hard](https://img.shields.io/badge/Hard-1-d9534f.svg?style=flat)](https://github.com/yunfeijing/LeetHub)
   </br>
