@@ -1,22 +1,28 @@
 class Solution {
     public int numSquares(int n) {
         int[] dp = new int[n+1];
-        // fill perfect squares
-        for (int i=1; i*i<=n; i++) {
-            dp[i*i] = 1;
+        for (int i=1; i<=n; i++) {
+            dp[i] = Integer.MAX_VALUE;
         }
         // dp[i] = the minimum number of perfect square numbers that sum to i
         for (int i=1; i<=n; i++) {
-            if (dp[i] == 1) continue;
-            int curr_min = n;
-            // Iterate only perfect squares in inner loop
-            for (int j=1; j*j<i; j++) {
-                if (dp[j*j] + dp[i-j*j] < curr_min) 
-                    curr_min = dp[j*j] + dp[i-j*j];
+            int sqrt = (int)Math.sqrt(i);
+            if (sqrt * sqrt == i) {
+                dp[i] = 1;
+                continue;                
             }
-            dp[i] = curr_min;
+            // To get the value of dp[n], we should choose the min
+            // value from:
+            //     dp[n - 1] + 1,
+            //     dp[n - 4] + 1,
+            //     dp[n - 9] + 1,
+            //     dp[n - 16] + 1
+            //     and so on...
+            for (int j = 1; j <= sqrt; j++) {
+                int diff = i - j * j;
+                dp[i] = Math.min(dp[i], (dp[diff] + 1));
+            }
         }
-        System.out.println(Arrays.toString(dp));
         return dp[n];
     }
 }
