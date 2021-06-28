@@ -9,13 +9,14 @@ class Solution {
         for (int i=1; i<=n; i++) {
             if (dp[i] == 1) continue;
             int curr_min = n;
-            for (int j=1; j<i; j++) {
-                if (dp[j] + dp[i-j] < curr_min) 
-                    curr_min = dp[j] + dp[i-j];
+            // Iterate only perfect squares in inner loop
+            for (int j=1; j*j<i; j++) {
+                if (dp[j*j] + dp[i-j*j] < curr_min) 
+                    curr_min = dp[j*j] + dp[i-j*j];
             }
             dp[i] = curr_min;
         }
-        // System.out.println(Arrays.toString(dp));
+        System.out.println(Arrays.toString(dp));
         return dp[n];
     }
 }
