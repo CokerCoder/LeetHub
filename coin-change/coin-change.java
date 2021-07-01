@@ -6,7 +6,8 @@ class Solution {
         dp[0] = 0;
         
         for (int i=0; i<coins.length; i++) {
-            if (coins[i] <= amount) dp[coins[i]] = 1;
+            if (coins[i] <= amount) 
+                dp[coins[i]] = 1;
         }
         
         // dp[i] = the fesest number of coins to make up i
@@ -21,9 +22,9 @@ class Solution {
             for (int j=0; j<coins.length; j++) {
                 if (i-coins[j] > 0) {
                     int diff = Math.min(dp[i], dp[i-coins[j]] + 1);
-                    if (diff > 0) dp[i] = diff;
+                    if (diff > 0)
+                        dp[i] = diff;
                 }
-                
             }
         }
         
