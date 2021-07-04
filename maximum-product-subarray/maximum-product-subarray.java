@@ -16,20 +16,15 @@ class Solution {
 //             }
 //         }
         
-        int[] dp = new int[n];
-        
         int maxi = nums[0];
         for (int i=0; i<n; i++) {
             for (int j=i; j<n; j++) {
-                if (i==j) {
-                    dp[i] = nums[i];
-                } else {
-                    dp[i] = dp[i] * nums[j];
+                if (i!=j) {
+                    nums[i] *= nums[j];
                 }
-                if (dp[i] > maxi) maxi = dp[i];
+                if (nums[i] > maxi) maxi = nums[i];
             }
         }
-        
         return maxi;
     }
 }
